@@ -27,7 +27,7 @@ const directions = [
     DOWN
 ];
 
-//%  block="LPC" weight=200 color=#3296BC icon="\u1f30e"
+//%  block="LPC" weight=200 color=#3296BC icon="\uf57e"
 namespace lpc {
     /**
      * Pick up books in the d direction

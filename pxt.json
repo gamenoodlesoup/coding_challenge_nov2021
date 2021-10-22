@@ -1,6 +1,6 @@
 {
     "name": "coding-challenge-nov2021",
-    "version": "1.13.2",
+    "version": "1.0.3",
     "dependencies": {
         "core": "*",
         "builder": "*"
