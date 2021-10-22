@@ -10,6 +10,7 @@ enum Direction {
     Right
 }
 
+// global variables
 const bookshelf = 47;
 const laundry = 724;
 
@@ -20,7 +21,7 @@ const directions = [
     RIGHT
 ];
 
-//%  block="Innovation Day" weight=200 color=#3296BC icon="\u1f30e"
+//%  block="LPC" weight=200 color=#3296BC icon="\u1f30e"
 namespace lpc {
     /**
      * Pick up books in the d direction
@@ -72,7 +73,7 @@ namespace lpc {
      * Place laundry in the d direction
      */
     //% block="Place down laundry %d"
-    export function placeLaundry(): void {
+    export function placeLaundry(d: Direction): void {
         const direction = directions[d];
         if (agent.getItemCount(2) > 0 && agent.get_item_detail(2) == laundry) {
             agent.place(direction);
