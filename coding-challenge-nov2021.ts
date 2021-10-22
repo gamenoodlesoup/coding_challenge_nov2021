@@ -13,14 +13,21 @@ enum Direction {
 const bookshelf = 47;
 const laundry = 724;
 
+const directions = [
+    FORWARD,
+    BACK,
+    LEFT,
+    RIGHT
+];
 
-//% block="Innovation Day" weight=200 color=#3296BC icon="\u1f30e"
+//%  block="Innovation Day" weight=200 color=#3296BC icon="\u1f30e"
 namespace lpc {
     /**
      * Pick up books in the d direction
      */
     //% block="Pick up books %d"
     export function pickupBooks(d: Direction): void {
+        const direction = directions[d];
         if (agent.inspect(AgentInspection.Block, direction) == bookshelf) {
             agent.destroy(d);
             const count = agent.getItemCount(1);
@@ -33,8 +40,9 @@ namespace lpc {
      */
     //% block="Place down books %d"
     export function placeBooks(d: Direction): void {
+        const direction = directions[d];
         if (agent.getItemCount(1) > 0 && agent.get_item_detail(1) == bookshelf) {
-            agent.place(d);
+            agent.place(direction);
         }
     }
 
@@ -52,8 +60,9 @@ namespace lpc {
      */
     //% block="Pick up laundry %d"
     export function pickupLaundry(d: Direction): void {
+        const direction = directions[d];
         if (agent.inspect(AgentInspection.Block, direction) == laundry) {
-            agent.destroy(d);
+            agent.destroy(direction);
             const count = agent.getItemCount(2);
             agent.setItem(bookshelfItem, count++, 2)
         }
@@ -64,8 +73,9 @@ namespace lpc {
      */
     //% block="Place down laundry %d"
     export function placeLaundry(): void {
+        const direction = directions[d];
         if (agent.getItemCount(2) > 0 && agent.get_item_detail(2) == laundry) {
-            agent.place(d);
+            agent.place(direction);
         }
     }
 }
