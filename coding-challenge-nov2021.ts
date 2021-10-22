@@ -7,7 +7,11 @@ enum Direction {
     //% block="left"
     Left,
     //% block="right"
-    Right
+    Right,
+    //% block="up"
+    Up,
+    //% block="down"
+    Down
 }
 
 // global variables
@@ -18,7 +22,9 @@ const directions = [
     FORWARD,
     BACK,
     LEFT,
-    RIGHT
+    RIGHT,
+    UP,
+    DOWN
 ];
 
 //%  block="LPC" weight=200 color=#3296BC icon="\u1f30e"
@@ -52,8 +58,8 @@ namespace lpc {
      */
     //% block="Agent walks upstairs"
     export function walkUpstairs() {
-        agent.move(UP, 1);
-        agent.move(FORWARD, 1);
+        agent.move(directions[Direction.Up], 1);
+        agent.move(directions[Direction.Down], 1);
     }
 
     /**
