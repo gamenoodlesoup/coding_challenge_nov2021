@@ -1,0 +1,16 @@
+{
+    "name": "coding-challenge-nov2021",
+    "version": "1.14.70",
+    "dependencies": {
+        "core": "*",
+        "builder": "*"
+    },
+    "files": [
+        "README.md",
+        "coding-challenge-nov2021.ts"
+    ],
+    "supportedTargets": [
+        "minecraft"
+    ],
+    "preferredEditor": "tsprj"
+}
