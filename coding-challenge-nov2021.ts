@@ -36,7 +36,7 @@ namespace lpc {
     export function pickupBooks(d: Direction): void {
         const direction = directions[d];
         if (agent.inspect(AgentInspection.Block, direction) == bookshelf) {
-            agent.destroy(d);
+            agent.destroy(direction);
             const count = agent.getItemCount(1);
             agent.setItem(bookshelf, count + 1, 1)
         }
