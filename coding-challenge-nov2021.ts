@@ -22,6 +22,7 @@ namespace lpc {
     //% block="Detect books %d"
     export function detectBooks(direction: SixDirection): boolean {
         return agent.inspect(AgentInspection.Block, direction) == bookshelf
+    }
 
     /**
      * Place books in the d direction
@@ -80,4 +81,5 @@ namespace lpc {
     //% block="Detect laundry %d"
     export function detectBooks(direction: SixDirection): boolean {
         return agent.inspect(AgentInspection.Block, direction) == laundry
+    }
 }
