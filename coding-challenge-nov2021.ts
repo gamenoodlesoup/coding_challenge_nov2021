@@ -11,7 +11,10 @@ namespace lpc {
     export function pickupBooks(direction: SixDirection): void {
         if (agent.inspect(AgentInspection.Block, direction) == bookshelf) {
             agent.destroy(direction);
-            const count = agent.getItemCount(1);
+            let count = 0;
+            if (agent.getItemDetail(1) == bookshelf) {
+                count = agent.getItemCount(1);
+            }
             agent.setItem(bookshelf, count + 1, 1)
         }
     }
@@ -60,8 +63,11 @@ namespace lpc {
     export function pickupLaundry(direction: SixDirection): void {
         if (agent.inspect(AgentInspection.Block, direction) == laundry) {
             agent.destroy(direction);
-            const count = agent.getItemCount(2);
-            agent.setItem(laundry, count + 1, 2)
+            let count = 0;
+            if (agent.getItemDetail(1) == laundry) {
+                count = agent.getItemCount(1);
+            }
+            agent.setItem(laundry, count + 1, 1)
         }
     }
 
@@ -70,7 +76,7 @@ namespace lpc {
      */
     //% block="Place down laundry %d"
     export function placeLaundry(direction: SixDirection): void {
-        if (agent.getItemCount(2) > 0 && agent.getItemDetail(2) == laundry) {
+        if (agent.getItemCount(1) > 0 && agent.getItemDetail(1) == laundry) {
             agent.place(direction);
         }
     }
