@@ -34,6 +34,8 @@ namespace lpc {
     export function placeBooks(direction: SixDirection): void {
         if (agent.getItemCount(1) > 0 && agent.getItemDetail(1) == bookshelf) {
             agent.place(direction);
+        } else {
+            player.tell(mobs.target(LOCAL_PLAYER), "I don't have books to place!")
         }
     }
 
@@ -78,6 +80,8 @@ namespace lpc {
     export function placeLaundry(direction: SixDirection): void {
         if (agent.getItemCount(1) > 0 && agent.getItemDetail(1) == laundry) {
             agent.place(direction);
+        } else {
+            player.tell(mobs.target(LOCAL_PLAYER), "I don't have laundry to place!")
         }
     }
         
