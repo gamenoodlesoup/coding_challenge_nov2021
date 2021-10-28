@@ -47,7 +47,7 @@ namespace lpc {
      * Agent walks downstairs
      */
     //% block="Agent walks downstairs"
-    export function walkUpstairs() {
+    export function walkDownstairs() {
         agent.move(FORWARD, 1);
         agent.move(DOWN, 1);
     }
