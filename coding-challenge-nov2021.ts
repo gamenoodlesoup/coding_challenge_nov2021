@@ -79,7 +79,7 @@ namespace lpc {
      * Detect whether there are laundry in the d direction
      */
     //% block="Detect laundry %d"
-    export function detectBooks(direction: SixDirection): boolean {
+    export function detectLaundry(direction: SixDirection): boolean {
         return agent.inspect(AgentInspection.Block, direction) == laundry
     }
 }
